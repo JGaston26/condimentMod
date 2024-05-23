@@ -8,6 +8,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import org.justin.condiment.condiment_mod.Condiment_mod;
+import org.justin.condiment.condiment_mod.block.ModBlock;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
@@ -17,6 +18,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creative.condiment_mod_tab"))
                     .displayItems((p_270258_, p_259752_) -> {
                         p_259752_.accept(ModItems.MAYO.get());
+                        p_259752_.accept(ModBlock.MAYO_BLOCK.get());
                     })
                     .build());
     public static void register(IEventBus eventBus){
