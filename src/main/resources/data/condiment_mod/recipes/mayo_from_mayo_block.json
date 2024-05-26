@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {
+            "item": "condiment_mod:mayo_block"
+        }
+    ],
+    "result":
+        {
+            "item": "condiment_mod:mayo",
+            "count": 9
+        }
+}
