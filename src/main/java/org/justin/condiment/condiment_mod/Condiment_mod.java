@@ -2,6 +2,8 @@ package org.justin.condiment.condiment_mod;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -28,6 +30,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.justin.condiment.condiment_mod.block.ModBlock;
+import org.justin.condiment.condiment_mod.fluid.ModFluid;
+import org.justin.condiment.condiment_mod.fluid.ModFluidTypes;
 import org.justin.condiment.condiment_mod.item.ModCreativeModeTabs;
 import org.justin.condiment.condiment_mod.item.ModItems;
 import org.slf4j.Logger;
@@ -69,7 +73,8 @@ public class Condiment_mod {
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModBlock.register(modEventBus);
-
+        ModFluidTypes.register(modEventBus);
+        ModFluid.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         // Register the Deferred Register to the mod event bus so blocks get registered
@@ -123,6 +128,8 @@ public class Condiment_mod {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            ItemBlockRenderTypes.setRenderLayer(ModFluid.SOURCE_MAYO_LIQUID.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluid.FLOWING_MAYO_LIQUID.get(),RenderType.translucent());
         }
     }
 }

@@ -19,6 +19,7 @@ public class ModCreativeModeTabs {
                     .displayItems((p_270258_, p_259752_) -> {
                         p_259752_.accept(ModItems.MAYO.get());
                         p_259752_.accept(ModBlock.MAYO_BLOCK.get());
+                        p_259752_.accept(ModItems.BUCKET_O_MAYO.get());
                     })
                     .build());
     public static void register(IEventBus eventBus){
